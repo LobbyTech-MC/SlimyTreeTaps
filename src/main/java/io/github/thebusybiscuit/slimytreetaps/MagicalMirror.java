@@ -39,14 +39,14 @@ public class MagicalMirror extends SimpleSlimefunItem<ItemUseHandler> implements
     public ItemUseHandler getItemHandler() {
         return e -> {
             e.cancel();
-            e.getPlayer().sendMessage(ChatColor.GREEN + "Give your Location a name! Type it in chat.");
+            e.getPlayer().sendMessage(ChatColor.GREEN + "请在聊天框中输入地点名称");
             ChatUtils.awaitInput(e.getPlayer(), name -> setLocation(e.getPlayer(), e.getItem(), name, e.getPlayer().getLocation()));
         };
     }
 
     public void teleport(Player p, ItemStack item) {
         if (!p.getInventory().containsAtLeast(new ItemStack(Material.ENDER_PEARL), 1)) {
-            p.sendMessage(ChatColor.RED + "You need at least one Ender Pearl to use the magical Mirror!");
+            p.sendMessage(ChatColor.RED + "你至少需要一个末影珍珠来使用魔法传送!");
             return;
         }
 
@@ -56,17 +56,17 @@ public class MagicalMirror extends SimpleSlimefunItem<ItemUseHandler> implements
             if (p.getInventory().removeItem(new ItemStack(Material.ENDER_PEARL)).isEmpty()) {
                 PaperLib.teleportAsync(p, location.get()).thenAccept(hasTeleported -> {
                     if (hasTeleported.booleanValue()) {
-                        p.sendTitle(item.getItemMeta().getDisplayName(), ChatColor.GRAY + "- Magical Mirror -", 20, 60, 20);
+                        p.sendTitle(item.getItemMeta().getDisplayName(), ChatColor.GRAY + "- 魔法传送 -", 20, 60, 20);
                     } else {
                         p.getInventory().addItem(new ItemStack(Material.ENDER_PEARL));
-                        p.sendMessage(ChatColor.RED + "Teleportation was cancelled!");
+                        p.sendMessage(ChatColor.RED + "传送被取消!");
                     }
                 });
             } else {
-                p.sendMessage(ChatColor.RED + "You need at least one Ender Pearl to teleport!");
+                p.sendMessage(ChatColor.RED + "你至少需要一个末影珍珠来使用魔法传送!");
             }
         } else {
-            p.sendMessage(ChatColor.RED + "This Magical Mirror does not seem to have a valid destination!");
+            p.sendMessage(ChatColor.RED + "魔法传送目标地点不存在!");
         }
     }
 
@@ -84,7 +84,7 @@ public class MagicalMirror extends SimpleSlimefunItem<ItemUseHandler> implements
         meta.getPersistentDataContainer().set(mirrorLocation, PersistentDataType.STRING, json.toString());
         meta.setDisplayName(ChatColor.AQUA + ChatUtils.removeColorCodes(name));
         item.setItemMeta(meta);
-        p.sendMessage(ChatColor.GREEN + "Successfully set your mirror location!");
+        p.sendMessage(ChatColor.GREEN + "成功传送!");
     }
 
     private Optional<Location> getLocation(ItemStack item) {
