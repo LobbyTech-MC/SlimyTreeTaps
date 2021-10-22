@@ -33,33 +33,33 @@ public class TreeTaps extends JavaPlugin implements SlimefunAddon {
 		Config cfg = new Config(this);
 		
 		if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-			new GitHubBuildsUpdater(this, getFile(), "TheBusyBiscuit/SlimyTreeTaps/master").start();
+			new GitHubBuildsUpdater(this, getFile(), "ybw0014/SlimyTreeTaps-CN/master").start();
 		}
 		
 		new Metrics(this, 6138);
 		
-		SlimefunItemStack treeTap = new SlimefunItemStack("TREE_TAP", Material.WOODEN_HOE, "&6Tree Tap", getLore("Resin", cfg.getInt("resin-chance.standard")));
-		SlimefunItemStack reinforcedTreeTap = new SlimefunItemStack("REINFORCED_TREE_TAP", Material.IRON_HOE, "&6Reinforced Tree Tap", getLore("Resin", cfg.getInt("resin-chance.reinforced")));
-		SlimefunItemStack diamondTreeTap = new SlimefunItemStack("DIAMOND_TREE_TAP", Material.DIAMOND_HOE, "&bDiamond Tree Tap", getLore("Resin", cfg.getInt("resin-chance.diamond")));
-		SlimefunItemStack treeScraper = new SlimefunItemStack("TREE_SCRAPER", Material.GOLDEN_SHOVEL, "&bTree Scraper", getLore("Amber", cfg.getInt("amber-chance")));
+		SlimefunItemStack treeTap = new SlimefunItemStack("TREE_TAP", Material.WOODEN_HOE, "&6木龙头", getLore("树脂", cfg.getInt("resin-chance.standard")));
+		SlimefunItemStack reinforcedTreeTap = new SlimefunItemStack("REINFORCED_TREE_TAP", Material.IRON_HOE, "&6强化木龙头", getLore("树脂", cfg.getInt("resin-chance.reinforced")));
+		SlimefunItemStack diamondTreeTap = new SlimefunItemStack("DIAMOND_TREE_TAP", Material.DIAMOND_HOE, "&b钻石木龙头", getLore("树脂", cfg.getInt("resin-chance.diamond")));
+		SlimefunItemStack treeScraper = new SlimefunItemStack("TREE_SCRAPER", Material.GOLDEN_SHOVEL, "&b树皮刮刀", getLore("琥珀", cfg.getInt("amber-chance")));
 
 		clearAttributes(treeTap, reinforcedTreeTap, diamondTreeTap, treeScraper);
 		
-		SlimefunItemStack stickyResin = new SlimefunItemStack("STICKY_RESIN", Material.BROWN_DYE, "&6Sticky Resin", "", "&7Can be turned into Rubber");
-		SlimefunItemStack rubber = new SlimefunItemStack("RUBBER", Material.FIREWORK_STAR, "&eRubber", "", "&7An alternative source of plastic");
-		SlimefunItemStack rawPlastic = new SlimefunItemStack("RAW_PLASTIC", Material.PAPER, "&rRaw Plastic");
+		SlimefunItemStack stickyResin = new SlimefunItemStack("STICKY_RESIN", Material.BROWN_DYE, "&6粘性树脂", "", "&7可以制成橡胶");
+		SlimefunItemStack rubber = new SlimefunItemStack("RUBBER", Material.FIREWORK_STAR, "&e橡胶", "", "&7塑料的替代来源");
+		SlimefunItemStack rawPlastic = new SlimefunItemStack("RAW_PLASTIC", Material.PAPER, "&f生塑料");
 		
-		SlimefunItemStack rubberFactory = new SlimefunItemStack("RUBBER_FACTORY", Material.SMOKER, "&bRubber Factory", "", LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE), "&8\u21E8 &7Speed: 1x", "&8\u21E8 &e\u26A1 &712 J/s");
-		SlimefunItemStack resinExtractor = new SlimefunItemStack("RESIN_EXTRACTOR", Material.SMITHING_TABLE, "&cResin Extractor", "", LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE), "&8\u21E8 &7Speed: 1x", "&8\u21E8 &e\u26A1 &732 J/s");
-		SlimefunItemStack resinExtractor2 = new SlimefunItemStack("RESIN_EXTRACTOR_2", Material.SMITHING_TABLE, "&cResin Extractor &7(&eII&7)", "", LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE), "&8\u21E8 &7Speed: 2x", "&8\u21E8 &e\u26A1 &756 J/s");
+		SlimefunItemStack rubberFactory = new SlimefunItemStack("RUBBER_FACTORY", Material.SMOKER, "&b橡胶工厂", "", LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE), "&8\u21E8 &7速度: 1x", "&8\u21E8 &e\u26A1 &712 J/s");
+		SlimefunItemStack resinExtractor = new SlimefunItemStack("RESIN_EXTRACTOR", Material.SMITHING_TABLE, "&c树脂提取器", "", LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE), "&8\u21E8 &7速度: 1x", "&8\u21E8 &e\u26A1 &732 J/s");
+		SlimefunItemStack resinExtractor2 = new SlimefunItemStack("RESIN_EXTRACTOR_2", Material.SMITHING_TABLE, "&c树脂提取器 &7(&eII&7)", "", LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE), "&8\u21E8 &7速度: 2x", "&8\u21E8 &e\u26A1 &756 J/s");
 		
-		SlimefunItemStack amber = new SlimefunItemStack("AMBER", "ac7f7b72fc3e733828fcccc0ca8278aca2633aa33a231c93a682d14ac54aa0c4", "&6Amber", "", "&eA hardened gem acquired from Resin");
-		SlimefunItemStack amberBlock = new SlimefunItemStack("AMBER_BLOCK", Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Material.SHROOMLIGHT: Material.GLOWSTONE, "&6Block of Amber");
+		SlimefunItemStack amber = new SlimefunItemStack("AMBER", "ac7f7b72fc3e733828fcccc0ca8278aca2633aa33a231c93a682d14ac54aa0c4", "&6琥珀", "", "&e从树脂中提炼的硬化宝石");
+		SlimefunItemStack amberBlock = new SlimefunItemStack("AMBER_BLOCK", Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Material.SHROOMLIGHT: Material.GLOWSTONE, "&6琥珀块");
         
-		SlimefunItemStack blueEnderPearl = new SlimefunItemStack("BLUE_ENDER_PEARL", "38be8abd66d09a58ce12d377544d726d25cad7e979e8c2481866be94d3b32f", "&9Blue Ender Pearl", "", "&7This item can be used to", "&7craft Magical Mirrors");
-		SlimefunItemStack magicalMirror = new SlimefunItemStack("MAGICAL_MIRROR", Material.BLUE_STAINED_GLASS_PANE, "&9Magical Mirror &7(Unbound)", "", "&eRight Click &7to bind this Mirror", "&7to your current location.", "", "&7Place a bound mirror into an", "&7Item Frame and then click on", "&7that Item Frame to teleport.", "&7Teleports cost &b1 Ender Pearl");
+		SlimefunItemStack blueEnderPearl = new SlimefunItemStack("BLUE_ENDER_PEARL", "38be8abd66d09a58ce12d377544d726d25cad7e979e8c2481866be94d3b32f", "&9蓝色末影珍珠", "", "&7该物品可用于制作魔镜");
+		SlimefunItemStack magicalMirror = new SlimefunItemStack("MAGICAL_MIRROR", Material.BLUE_STAINED_GLASS_PANE, "&9魔镜 &7(未绑定)", "", "&e右键点击 &7绑定此魔镜", "&7到当前位置", "", "&7将已绑定的魔镜放入", "&7物品展示框,并点击物品", "&7来传送到绑定的未知", "&7传送需要花费&b1个末影珍珠");
         
-		ItemGroup itemGroup = new ItemGroup(new NamespacedKey(this, "tree_taps"), new CustomItemStack(treeTap, "&6Slimy TreeTaps", "", "&a> Click to open"));
+		ItemGroup itemGroup = new ItemGroup(new NamespacedKey(this, "tree_taps"), new CustomItemStack(treeTap, "&6粘液木龙头", "", "&a> 单击打开"));
 		RecipeType rubberFactoryType = new RecipeType(new NamespacedKey(this, "rubber_factory"), rubberFactory);
 		
 		new TreeTool(itemGroup, treeTap, cfg.getInt("resin-chance.standard"), stickyResin,
@@ -232,19 +232,19 @@ public class TreeTaps extends JavaPlugin implements SlimefunAddon {
         });
         mirror.register(this);
 
-        Research treeTapsResearch = new Research(new NamespacedKey(this, "tree_taps"), 6789, "Tree Taps", 15);
+        Research treeTapsResearch = new Research(new NamespacedKey(this, "tree_taps"), 6789, "木龙头", 15);
 		treeTapsResearch.addItems(treeTap, reinforcedTreeTap, diamondTreeTap, stickyResin, rubber, rawPlastic);
 		treeTapsResearch.register();
 
-		Research automationResearch = new Research(new NamespacedKey(this, "rubber_automation"), 6790, "Automated Rubber", 20);
+		Research automationResearch = new Research(new NamespacedKey(this, "rubber_automation"), 6790, "自动化橡胶", 20);
 		automationResearch.addItems(rubberFactory, resinExtractor, resinExtractor2);
 		automationResearch.register();
 
-        Research amberResearch = new Research(new NamespacedKey(this, "amber"), 6791, "Amber", 20);
+        Research amberResearch = new Research(new NamespacedKey(this, "amber"), 6791, "琥珀", 20);
         amberResearch.addItems(treeScraper, amber, amberBlock);
         amberResearch.register();
 
-        Research magicalMirrorResearch = new Research(new NamespacedKey(this, "magical_mirror"), 6792, "Magical Mirror", 30);
+        Research magicalMirrorResearch = new Research(new NamespacedKey(this, "magical_mirror"), 6792, "魔镜", 30);
         magicalMirrorResearch.addItems(blueEnderPearl, magicalMirror);
         magicalMirrorResearch.register();
         
@@ -254,8 +254,8 @@ public class TreeTaps extends JavaPlugin implements SlimefunAddon {
 	private String[] getLore(String item, int chance) {
 		return new String[] {
 				"", 
-				"&7Chance: &a" + chance + "%", 
-				"&eRight Click any Log &7to harvest " + item
+				"&7几率: &a" + chance + "%",
+				"&e右键点击任何原木&7以获取: " + item
 		};
 	}
 
@@ -269,7 +269,7 @@ public class TreeTaps extends JavaPlugin implements SlimefunAddon {
 
 	@Override
 	public String getBugTrackerURL() {
-		return "https://github.com/TheBusyBiscuit/Slimytreetaps/issues";
+		return "https://github.com/ybw0014/SlimyTreeTaps-CN/issues";
 	}
 
 	@Override
