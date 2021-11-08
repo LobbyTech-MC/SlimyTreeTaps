@@ -57,7 +57,7 @@ public class TreeTaps extends JavaPlugin implements SlimefunAddon {
 		SlimefunItemStack amberBlock = new SlimefunItemStack("AMBER_BLOCK", Slimefun.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) ? Material.SHROOMLIGHT: Material.GLOWSTONE, "&6琥珀块");
         
 		SlimefunItemStack blueEnderPearl = new SlimefunItemStack("BLUE_ENDER_PEARL", "38be8abd66d09a58ce12d377544d726d25cad7e979e8c2481866be94d3b32f", "&9蓝色末影珍珠", "", "&7该物品可用于制作魔镜");
-		SlimefunItemStack magicalMirror = new SlimefunItemStack("MAGICAL_MIRROR", Material.BLUE_STAINED_GLASS_PANE, "&9魔镜 &7(未绑定)", "", "&e右键点击 &7绑定此魔镜", "&7到当前位置", "", "&7将已绑定的魔镜放入", "&7物品展示框,并点击物品", "&7来传送到绑定的未知", "&7传送需要花费&b1个末影珍珠");
+		SlimefunItemStack magicalMirror = new SlimefunItemStack("MAGICAL_MIRROR", Material.BLUE_STAINED_GLASS_PANE, "&9魔镜 &7(未绑定)", "", "&e右键点击 &7绑定此魔镜", "&7到当前位置", "", "&7将已绑定的魔镜放入", "&7物品展示框,并点击物品", "&7来传送到绑定的位置", "&7传送需要花费&b1个末影珍珠");
         
 		ItemGroup itemGroup = new ItemGroup(new NamespacedKey(this, "tree_taps"), new CustomItemStack(treeTap, "&6粘液木龙头", "", "&a> 单击打开"));
 		RecipeType rubberFactoryType = new RecipeType(new NamespacedKey(this, "rubber_factory"), rubberFactory);
