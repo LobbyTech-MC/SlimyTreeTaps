@@ -17,7 +17,7 @@ public abstract class RubberFactory extends AContainer implements RecipeDisplayI
 
     @Override
     public String getInventoryTitle() {
-        return "橡胶厂";
+        return "橡胶工厂";
     }
 
     @Override

@@ -1,32 +1,39 @@
-# SlimyTreeTaps
-SlimyTreeTaps is a [Slimefun4](https://github.com/Slimefun/Slimefun4/) Addon.<br>
-You need to install Slimefun4 in order for this plugin to work.
+# SlimyTreeTaps 粘液木龙头
 
-SlimyTreeTaps is a Slimefun4 Addon that is heavily inspired by the famous mod [IndustrialCraft 2](https://www.curseforge.com/minecraft/mc-mods/industrial-craft).
-It adds Tree Taps to Slimefun.
-By using Tree Taps on any log, you are able to get Rubber, which can then be turned into Plastic.<br>
-This adds an alternative way of obtaining Plastic to Slimefun.
+SlimyTreeTaps 是一个 Slimefun4 附属插件。
+你需要安装 Slimefun4 才能让此插件运行。
 
-This addon also adds a few magical aspects to the game, such as amber, magical mirrors and other amber-related items.
+SlimyTreeTaps 受到知名模组 [工业2](https://www.curseforge.com/minecraft/mc-mods/industrial-craft) 的启发，它向 Slimefun 添加了木龙头。
+对着任何原木使用木龙头，即可获取树脂。然后你可以将其制成塑料。
 
-## Download SlimyTreeTaps
-You can download SlimyTreeTaps right here: [Development Builds](https://thebusybiscuit.github.io/builds/TheBusyBiscuit/SlimyTreeTaps/master/)
+这向 Slimefun 添加了一个获取塑料备用的方法。
+
+该附属也添加了一些魔法相关物品，比如琥珀、魔镜以及其他琥珀相关的物品。
+
+## 下载 SlimyTreeTaps
+
+你可以在这里下载SlimyTreeTaps: [下载SlimyTreeTaps](https://builds.guizhanss.net/ybw0014/SlimyTreeTaps-CN/master)
 
 <p align="center">
-  <a href="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/SlimyTreeTaps/master/">
-    <img src="https://thebusybiscuit.github.io/builds/TheBusyBiscuit/SlimyTreeTaps/master/badge.svg" alt="Build Server"/>
+  <a href="https://github.com/ybw0014/SlimyTreeTaps-CN/actions/workflows/maven.yml">
+    <img src="https://github.com/ybw0014/SlimyTreeTaps-CN/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
+  </a>
+
+  <a href="https://builds.guizhanss.net/ybw0014/SlimyTreeTaps-CN/master">
+    <img src="https://builds.guizhanss.net/f/ybw0014/SlimyTreeTaps-CN/master/badge.svg" alt="Build status"/>
   </a>
 </p>
 
 ## Discord
-You can find Slimefun's community on Discord!
-Click the badge down below to join the server for suggestions/questions or other discussions about this plugin.
+
+你可以在Discord上找到Slimefun社区!
+点击下方的图片即可加入我们的服务器。你可以讨论本插件、提问题或给出宝贵的建议。
 
 <p align="center">
-  <a href="https://discord.gg/slimefun">
-    <img src="https://discordapp.com/api/guilds/565557184348422174/widget.png?style=banner3" alt="Discord Invite"/>
+  <a href="https://discord.gg/fsD4Bkh">
+    <img src="https://img.shields.io/discord/565557184348422174?color=7289DA&label=Discord&style=for-the-badge" alt="Discord Invite"/>
   </a>
 </p>
 
-## Open Source
-This Project is open-source and licensed under the [MIT License](https://github.com/TheBusyBiscuit/SlimyTreeTaps/blob/master/LICENSE)
+## 开源
+本项目以[MIT协议](/LICENSE)开源。
